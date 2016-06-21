@@ -32,7 +32,7 @@
         android:id="@+id/error_tips_show"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@mipmap/yd_net_error"
+        android:src="@mipmap/bq_net_error"
         android:scaleType="center"
         android:background="@android:color/white"
         android:layout_gravity="center"

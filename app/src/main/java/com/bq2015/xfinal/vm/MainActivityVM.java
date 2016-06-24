@@ -3,11 +3,11 @@ package com.bq2015.xfinal.vm;
 import android.support.annotation.NonNull;
 
 import com.bq2015.bqlib.mvvm.AbstractViewModel;
-import com.bq2015.xfinal.MainActivity;
+import com.bq2015.xfinal.view.activity.MainActivity;
 
 /**
  *
- * Created by Kylin on 2016/6/24.
+ * Created by bq2015 on 2016/6/24.
  */
 public class MainActivityVM extends AbstractViewModel<MainActivity> {
 

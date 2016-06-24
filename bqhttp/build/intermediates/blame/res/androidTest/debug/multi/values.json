@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "E:\\yundi\\RefYD\\user\\ydhttp\\build\\intermediates\\res\\merged\\androidTest\\debug\\values\\values.xml",
+        "outputFile": "E:\\Method\\AsworkSpace\\XFinal\\bqhttp\\build\\intermediates\\res\\merged\\androidTest\\debug\\values\\values.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 93
                 },
                 "from": {
-                    "file": "E:\\yundi\\RefYD\\user\\ydhttp\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "E:\\Method\\AsworkSpace\\XFinal\\bqhttp\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -36,6 +36,30 @@
                 },
                 "from": {
                     "file": "E:\\Fqq\\XFinal\\bqhttp\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 42,
+                        "endOffset": 93
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "E:\\yundi\\RefYD\\user\\ydhttp\\build\\intermediates\\res\\merged\\androidTest\\debug\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 42,
+                    "endOffset": 93
+                },
+                "from": {
+                    "file": "E:\\yundi\\RefYD\\user\\ydhttp\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,

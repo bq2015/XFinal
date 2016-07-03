@@ -1,7 +1,7 @@
 package com.bq2015.oknet.utils;
 
 /**
- * @author bq2015 on 2016/5/16.
+ * @author YaoWeihui on 2016/5/16.
  */
 public interface Cons {
     String IO_EXCEPTION = "Canceled";

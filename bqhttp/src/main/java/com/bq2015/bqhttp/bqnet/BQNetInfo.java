@@ -8,7 +8,7 @@
  *
  */
 
-package com.bq2015.oknet.bqnet;
+package com.bq2015.bqhttp.bqnet;
 
 /************************************************************
  * ,* Author:  bq2015

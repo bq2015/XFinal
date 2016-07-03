@@ -4,8 +4,6 @@ import android.content.Context;
 
 import java.lang.reflect.Proxy;
 
-import com.bq2015.bqhttp.net.NetUtil;
-
 /**
  * @author bq2015 on 2016/5/25.
  */

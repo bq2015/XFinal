@@ -1,11 +1,10 @@
-package com.bq2015.oknet.bqnet;
+package com.bq2015.bqhttp.bqnet;
 
 import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONException;
-
 import com.bq2015.oknet.exception.UnknowExceptionParser;
 import com.bq2015.oknet.utils.Cons;
 

@@ -2,14 +2,15 @@ package com.bq2015.oknet.callback;
 
 import android.support.annotation.Nullable;
 
-import okhttp3.Call;
-import okhttp3.Request;
-import okhttp3.Response;
 import com.bq2015.oknet.exception.ExceptionParseMgr;
 import com.bq2015.oknet.exception.ExceptionParser;
 import com.bq2015.oknet.exception.InternalExceptionParser;
 import com.bq2015.oknet.request.BaseRequest;
 import com.bq2015.oknet.utils.Cons;
+
+import okhttp3.Call;
+import okhttp3.Request;
+import okhttp3.Response;
 
 /**
  * 抽象的回调接口

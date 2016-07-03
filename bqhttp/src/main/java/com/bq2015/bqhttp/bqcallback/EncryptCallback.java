@@ -1,14 +1,14 @@
-package com.bq2015.oknet.bqcallback;
+package com.bq2015.bqhttp.bqcallback;
+
+import com.bq2015.bqhttp.MD5Utils;
+import com.bq2015.oknet.model.HttpParams;
+import com.bq2015.oknet.request.BaseRequest;
 
 import java.util.Comparator;
 import java.util.Map;
 import java.util.Random;
 import java.util.TreeMap;
 import java.util.concurrent.ConcurrentHashMap;
-
-import com.bq2015.oknet.model.HttpParams;
-import com.bq2015.oknet.request.BaseRequest;
-import com.bq2015.oknet.utils.MD5Utils;
 
 /**
  * 该类主要用于对所有的网络请求进行加密，防止拦截数据包进行篡改

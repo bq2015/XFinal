@@ -1,4 +1,4 @@
-package com.bq2015.oknet.bqcallback;
+package com.bq2015.bqhttp.bqcallback;
 
 
 import com.bq2015.oknet.callback.AbsCallback;

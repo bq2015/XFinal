@@ -1,8 +1,8 @@
-package com.bq2015.oknet.bqcallback;
+package com.bq2015.bqhttp.bqcallback;
 
 import android.text.TextUtils;
 
-import com.bq2015.oknet.bqnet.BQNetExceptionParser;
+import com.bq2015.bqhttp.bqnet.BQNetExceptionParser;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;

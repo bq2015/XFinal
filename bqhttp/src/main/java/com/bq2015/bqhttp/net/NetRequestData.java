@@ -30,11 +30,11 @@ public class NetRequestData {
 
     public String url;
     public HttpRequestType type;
-    HttpRequestContent requestContent;
-    Type[] types;
+    public HttpRequestContent requestContent;
+    public Type[] types;
 
-    String methodName;
+    public String methodName;
     public HttpParams params;
-    String jsonParam;
-    CacheMode cacheMode;
+    public String jsonParam;
+    public CacheMode cacheMode;
 }

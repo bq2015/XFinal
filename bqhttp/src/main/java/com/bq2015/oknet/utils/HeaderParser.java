@@ -2,14 +2,15 @@ package com.bq2015.oknet.utils;
 
 import android.text.TextUtils;
 
-import java.util.Locale;
-import java.util.StringTokenizer;
-
-import okhttp3.Headers;
 import com.bq2015.oknet.cache.CacheEntity;
 import com.bq2015.oknet.cache.CacheMode;
 import com.bq2015.oknet.model.HttpHeaders;
 import com.bq2015.oknet.request.BaseRequest;
+
+import java.util.Locale;
+import java.util.StringTokenizer;
+
+import okhttp3.Headers;
 
 public class HeaderParser {
     /**

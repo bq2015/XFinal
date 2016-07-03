@@ -10,11 +10,11 @@
 
 package com.bq2015.oknet.modeinterface.annotation;
 
+import com.bq2015.oknet.cache.CacheMode;
+
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
-
-import com.bq2015.oknet.cache.CacheMode;
 
 import static java.lang.annotation.ElementType.METHOD;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;

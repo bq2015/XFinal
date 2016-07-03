@@ -1,4 +1,4 @@
-package com.bq2015.oknet.utils;
+package com.bq2015.bqhttp;
 
 import java.io.File;
 import java.io.FileInputStream;

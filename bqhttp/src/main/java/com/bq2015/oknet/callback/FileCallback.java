@@ -3,13 +3,14 @@ package com.bq2015.oknet.callback;
 import android.os.Environment;
 import android.support.annotation.NonNull;
 
+import com.bq2015.oknet.OkHttpUtils;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
 import okhttp3.Response;
-import com.bq2015.oknet.OkHttpUtils;
 
 /**
  * 文件的回调下载进度监听

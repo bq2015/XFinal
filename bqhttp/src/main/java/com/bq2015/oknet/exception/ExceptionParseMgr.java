@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author bq2015 on 2016/5/16.
+ * @author YaoWeihui on 2016/5/16.
  */
 public enum ExceptionParseMgr {
     Instance;

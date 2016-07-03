@@ -1,24 +1,20 @@
-package com.bq2015.oknet.bqcallback;
+package com.bq2015.bqhttp.bqcallback;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.support.annotation.Nullable;
 import android.view.Window;
 
-import java.lang.reflect.Type;
+import com.bq2015.oknet.request.BaseRequest;
 
 import okhttp3.Call;
 import okhttp3.Response;
-import com.bq2015.oknet.request.BaseRequest;
 
-/**
- * 对于网络请求是否需要弹出进度对话框
- */
-public abstract class DialogCallback<T> extends JsonCallback<T> {
+public abstract class StringDialogCallback extends EncryptCallback<String> {
 
     private ProgressDialog dialog;
 
-    private void initDialog(Activity activity) {
+    public StringDialogCallback(Activity activity) {
         dialog = new ProgressDialog(activity);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setCanceledOnTouchOutside(false);
@@ -26,14 +22,8 @@ public abstract class DialogCallback<T> extends JsonCallback<T> {
         dialog.setMessage("请求网络中...");
     }
 
-    public DialogCallback(Activity activity) {
-        super();
-        initDialog(activity);
-    }
-
-    public DialogCallback(Activity activity, Type type) {
-        super(type);
-        initDialog(activity);
+    public String parseNetworkResponse(Response response) throws Exception {
+        return response.body().string();
     }
 
     @Override
@@ -46,8 +36,8 @@ public abstract class DialogCallback<T> extends JsonCallback<T> {
     }
 
     @Override
-    public void onAfter(boolean isFromCache, @Nullable T t, Call call, @Nullable Response response, @Nullable Exception e) {
-        super.onAfter(isFromCache, t, call, response, e);
+    public void onAfter(boolean isFromCache, @Nullable String s, Call call, Response response, @Nullable Exception e) {
+        super.onAfter(isFromCache, s, call, response, e);
         //网络请求结束后关闭对话框
         if (dialog != null && dialog.isShowing()) {
             dialog.dismiss();

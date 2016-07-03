@@ -33,7 +33,7 @@ public class Net {
     }
 
     public static NetApi get() {
-        NetInstance.okHttpUtils.setCacheMode(CacheMode.DEFAULT);
+        NetInstance.okHttpUtils.setCacheMode(CacheMode.FIRST_CACHE_THEN_REQUEST);
         return NetInstance.getApi();
     }
 }

@@ -4,6 +4,8 @@ import android.annotation.SuppressLint;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.bq2015.oknet.utils.JsonPrinter;
+
 import java.io.IOException;
 import java.util.Set;
 import java.util.concurrent.locks.Lock;
@@ -18,7 +20,6 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
 import okio.Buffer;
-import com.bq2015.oknet.utils.JsonPrinter;
 
 public class LoggerInterceptor implements Interceptor {
     private String tag;

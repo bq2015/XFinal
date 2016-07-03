@@ -10,5 +10,4 @@ public abstract class StringCallback extends AbsCallback<String> {
     public String parseNetworkResponse(Response response) throws Exception {
         return response.body().string();
     }
-
 }

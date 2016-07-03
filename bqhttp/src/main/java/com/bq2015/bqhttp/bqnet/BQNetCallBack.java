@@ -1,4 +1,4 @@
-package com.bq2015.oknet.bqnet;
+package com.bq2015.bqhttp.bqnet;
 
 import android.content.Context;
 import android.support.annotation.Nullable;

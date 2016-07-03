@@ -12,13 +12,13 @@ package com.bq2015.bqhttp.net;
 
 import android.content.Context;
 
+import com.bq2015.bqhttp.bqnet.BQNetCallBack;
 import com.bq2015.oknet.OkHttpUtils;
 import com.bq2015.oknet.callback.AbsCallback;
 import com.bq2015.oknet.modeinterface.INetView;
 import com.bq2015.oknet.request.BaseRequest;
 import com.bq2015.oknet.request.GetRequest;
 import com.bq2015.oknet.request.PostRequest;
-import com.bq2015.oknet.bqnet.BQNetCallBack;
 
 public class NetRequest<T> {
 

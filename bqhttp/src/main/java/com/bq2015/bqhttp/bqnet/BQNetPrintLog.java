@@ -1,10 +1,9 @@
-package com.bq2015.oknet.bqnet;
+package com.bq2015.bqhttp.bqnet;
 
 import android.text.TextUtils;
 import android.util.Log;
 
 import com.bq2015.bqhttp.net.NetRequestData;
-
 import com.bq2015.oknet.OkHttpUtils;
 
 /************************************************************

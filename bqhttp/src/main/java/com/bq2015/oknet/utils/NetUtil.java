@@ -8,12 +8,22 @@
  *
  */
 
-package com.bq2015.bqhttp.net;
+package com.bq2015.oknet.utils;
 
 import android.content.Context;
 import android.graphics.Bitmap;
 
 import com.alibaba.fastjson.JSON;
+import com.bq2015.bqhttp.net.NetRequest;
+import com.bq2015.bqhttp.net.NetRequestData;
+import com.bq2015.oknet.cache.CacheMode;
+import com.bq2015.oknet.modeinterface.annotation.CACHE;
+import com.bq2015.oknet.modeinterface.annotation.GET;
+import com.bq2015.oknet.modeinterface.annotation.PARAMS;
+import com.bq2015.oknet.modeinterface.annotation.POST;
+import com.bq2015.oknet.modeinterface.annotation.POSTJSON;
+import com.bq2015.oknet.model.HttpParams;
+
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.lang.annotation.Annotation;
@@ -25,14 +35,6 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.bq2015.oknet.cache.CacheMode;
-import com.bq2015.oknet.modeinterface.annotation.CACHE;
-import com.bq2015.oknet.modeinterface.annotation.GET;
-import com.bq2015.oknet.modeinterface.annotation.PARAMS;
-import com.bq2015.oknet.modeinterface.annotation.POST;
-import com.bq2015.oknet.modeinterface.annotation.POSTJSON;
-import com.bq2015.oknet.model.HttpParams;
 
 @SuppressWarnings("all")
 public class NetUtil implements InvocationHandler {

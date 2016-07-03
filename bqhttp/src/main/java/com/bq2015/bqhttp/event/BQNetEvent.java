@@ -1,7 +1,5 @@
 package com.bq2015.bqhttp.event;
 
-import com.bq2015.oknet.callback.NetEvent;
-
 import com.bq2015.bqhttp.net.NetRequest;
 
 /************************************************************
@@ -9,7 +7,7 @@ import com.bq2015.bqhttp.net.NetRequest;
  * Description:     // 模块描述
  * Date: 2016/5/31
  ************************************************************/
-public class BQNetEvent extends NetEvent{
+public class BQNetEvent {
 
     public static final int WHAT_NO_USE = -1;
 
@@ -38,22 +36,22 @@ public class BQNetEvent extends NetEvent{
         this.repMsg = repMsg;
     }
 
-    public boolean whoEqual(NetRequest request){
-        if(request == null){
+    public boolean whoEqual(NetRequest request) {
+        if (request == null) {
             return false;
         }
         return who.equals(request);
     }
 
-    public boolean requestOK(){
-        if(BQNET_STATUS.OK.equals(netStatus)){
+    public boolean requestOK() {
+        if (BQNET_STATUS.OK.equals(netStatus)) {
             return true;
         }
         return false;
     }
 
-    public <T> T getNetResult(){
-        return (T)obj;
+    public <T> T getNetResult() {
+        return (T) obj;
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.bq2015.oknet.bqnet;
+package com.bq2015.bqhttp.bqnet;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
@@ -7,10 +7,10 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
+import com.bq2015.bqhttp.bqcallback.JsonCallback;
 import com.bq2015.bqhttp.event.BQNET_STATUS;
 import com.bq2015.bqhttp.event.BQNetEvent;
 import com.bq2015.bqhttp.event.BQNetEventBuilder;
-import com.bq2015.oknet.bqcallback.JsonCallback;
 import com.bq2015.oknet.utils.Cons;
 
 import okhttp3.Request;

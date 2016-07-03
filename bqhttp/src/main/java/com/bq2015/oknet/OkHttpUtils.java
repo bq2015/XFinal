@@ -36,7 +36,6 @@ import okio.Buffer;
  * 网络请求的入口类
  */
 public class OkHttpUtils {
-
     public static final int DEFAULT_MILLISECONDS = 10000; //默认的超时时间
     private static OkHttpUtils mInstance;                 //单例
     private Handler mDelivery;                            //用于在主线程执行的调度器
@@ -45,7 +44,21 @@ public class OkHttpUtils {
     private HttpHeaders mCommonHeaders;                   //全局公共请求头
     private CacheMode mCacheMode;                         //全局缓存模式
     private static Application context;                   //全局上下文
-    private static String baseUrl;                        //全局baseUrl
+    private static String baseUrl;                               //全局baseUrl
+
+
+    public boolean isInnerDebug() {
+        return isInnerDebug;
+    }
+
+    //内部逻辑调试
+    public OkHttpUtils setInnerDebug(boolean innerDebug) {
+        isInnerDebug = innerDebug;
+        return this;
+    }
+
+    private boolean isInnerDebug;
+
 
     private OkHttpUtils() {
         okHttpClientBuilder = new OkHttpClient.Builder();

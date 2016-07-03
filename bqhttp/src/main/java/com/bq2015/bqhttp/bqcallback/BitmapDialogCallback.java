@@ -1,4 +1,4 @@
-package com.bq2015.oknet.bqcallback;
+package com.bq2015.bqhttp.bqcallback;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -6,10 +6,11 @@ import android.graphics.Bitmap;
 import android.support.annotation.Nullable;
 import android.view.Window;
 
-import okhttp3.Call;
-import okhttp3.Response;
 import com.bq2015.oknet.callback.BitmapCallback;
 import com.bq2015.oknet.request.BaseRequest;
+
+import okhttp3.Call;
+import okhttp3.Response;
 
 /**
  * 请求图图片的时候显示对话框

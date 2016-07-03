@@ -1,12 +1,13 @@
 package com.bq2015.oknet.cookie;
 
 
+import com.bq2015.oknet.cookie.store.CookieStore;
+
 import java.util.List;
 
 import okhttp3.Cookie;
 import okhttp3.CookieJar;
 import okhttp3.HttpUrl;
-import com.bq2015.oknet.cookie.store.CookieStore;
 
 public class CookieJarImpl implements CookieJar {
 

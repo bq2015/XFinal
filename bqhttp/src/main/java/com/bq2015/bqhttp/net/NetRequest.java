@@ -67,7 +67,7 @@ public class NetRequest<T> {
         return this;
     }
 
-    public NetRequest<T> execute(OnYDNetEventListener onYdNetEventListener){
+    public NetRequest<T> execute(OnBQNetEventListener onYdNetEventListener){
 
       if (data != null) {
           if (onYdNetEventListener == null) {

@@ -1,6 +1,18 @@
 package com.bq2015.oknet.request;
 
 import android.support.annotation.NonNull;
+import android.util.Log;
+
+import com.bq2015.oknet.OkHttpUtils;
+import com.bq2015.oknet.cache.CacheEntity;
+import com.bq2015.oknet.cache.CacheManager;
+import com.bq2015.oknet.cache.CacheMode;
+import com.bq2015.oknet.callback.AbsCallback;
+import com.bq2015.oknet.exception.HttpException;
+import com.bq2015.oknet.https.HttpsUtils;
+import com.bq2015.oknet.model.HttpHeaders;
+import com.bq2015.oknet.model.HttpParams;
+import com.bq2015.oknet.utils.HeaderParser;
 
 import java.io.File;
 import java.io.IOException;
@@ -26,16 +38,6 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
-import com.bq2015.oknet.OkHttpUtils;
-import com.bq2015.oknet.cache.CacheEntity;
-import com.bq2015.oknet.cache.CacheManager;
-import com.bq2015.oknet.cache.CacheMode;
-import com.bq2015.oknet.callback.AbsCallback;
-import com.bq2015.oknet.exception.HttpException;
-import com.bq2015.oknet.https.HttpsUtils;
-import com.bq2015.oknet.model.HttpHeaders;
-import com.bq2015.oknet.model.HttpParams;
-import com.bq2015.oknet.utils.HeaderParser;
 
 /**
  * 所有请求的基类，其中泛型 R 主要用于属性设置方法后，返回对应的子类型，以便于实现链式调用
@@ -390,6 +392,7 @@ public abstract class BaseRequest<R extends BaseRequest> {
         call.enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
+                Log.d("fang","onFailure");
                 //请求失败，一般为url地址错误，网络错误等
                 sendFailResultCallback(false, call, null, e, mCallback);
             }
@@ -397,6 +400,7 @@ public abstract class BaseRequest<R extends BaseRequest> {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 int responseCode = response.code();
+                Log.d("fang","onResponse-->"+response.newBuilder().toString());
                 //304缓存数据
                 if (responseCode == 304 && cacheMode == CacheMode.DEFAULT) {
                     if (cacheEntity == null) {

@@ -28,12 +28,12 @@ public class BQNetExceptionParser extends UnknowExceptionParser {
     protected boolean handler(@NonNull Throwable e, @NonNull IHandler handler) {
         //捕捉到自定义异常
         Log.v("YDNet", className + "errorMsg：" + e.toString());
-        int    code = ((BQNetUnkownException) e).getErrorCode();
-        String msg  = ((BQNetUnkownException) e).getErrorMsg();
+       // int    code = ((BQNetUnkownException) e).getErrorCode();
+       // String msg  = ((BQNetUnkownException) e).getErrorMsg();
 
         BQNetInfo netInfo = new BQNetInfo();
-        netInfo.setCode(code);
-        netInfo.setMsg(msg);
+        //netInfo.setCode(code);
+       // netInfo.setMsg(msg);
 
         if (JSONException.class.isAssignableFrom(e.getClass())) {
             handler.onHandler(Cons.Error.UnKnow, JSON.toJSONString(netInfo));

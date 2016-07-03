@@ -12,7 +12,7 @@ package com.bq2015.bqlib.event;
 
 import android.util.Log;
 
-import com.bq2015.bqhttp.event.YDNET_STATUS;
+import com.bq2015.bqhttp.event.BQNET_STATUS;
 
 /************************************************************
  * Author:  bq2015
@@ -31,13 +31,13 @@ public class BQSocketEventMsg {
     public String repMsg;
     public int whatCommonResponse;
 
-    public YDNET_STATUS netStatus;
+    public BQNET_STATUS netStatus;
 
     public BQSocketEventMsg() {
     }
 
     public BQSocketEventMsg(Object context, int what, int arg1, int arg2, Object obj, String repMsg,
-                            int whatCommonResponse, YDNET_STATUS netStatus) {
+                            int whatCommonResponse, BQNET_STATUS netStatus) {
         this.context = context;
         this.what = what;
         this.arg1 = arg1;
@@ -57,7 +57,7 @@ public class BQSocketEventMsg {
         if(request == null){
             return false;
         }
-        Log.d("zhou", "what =" + what + " request ="+request.getSimpleName());
+        Log.d("fang", "who =" + what + " request ="+request.getSimpleName());
         return what == request.getSimpleName().hashCode();
     }
 
@@ -66,7 +66,7 @@ public class BQSocketEventMsg {
     }
 
     public boolean requestOK(){
-        if(YDNET_STATUS.OK.equals(netStatus)){
+        if(BQNET_STATUS.OK.equals(netStatus)){
             return true;
         }
         return false;

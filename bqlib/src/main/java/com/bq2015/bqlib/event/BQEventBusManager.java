@@ -10,7 +10,7 @@
 
 package com.bq2015.bqlib.event;
 
-import com.bq2015.bqhttp.event.YDNetEvent;
+import com.bq2015.bqhttp.event.BQNetEvent;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -30,8 +30,8 @@ public enum BQEventBusManager {
     public void post(BQEvent ydMessage){
         eventBus.post(ydMessage);
     }
-    public void postNet(YDNetEvent ydNetEvent){
-        eventBus.post(ydNetEvent);
+    public void postNet(BQNetEvent BQNetEvent){
+        eventBus.post(BQNetEvent);
     }
 
     public void postSocket(BQSocketEventMsg ydNetEvent){

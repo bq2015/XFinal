@@ -10,7 +10,7 @@
 
 package com.bq2015.bqlib.event;
 
-import com.bq2015.bqhttp.event.YDNET_STATUS;
+import com.bq2015.bqhttp.event.BQNET_STATUS;
 
 public class BQSocketEventMsgBuilder {
     private Object context;
@@ -20,7 +20,7 @@ public class BQSocketEventMsgBuilder {
     private Object obj;
     private String repMsg;
     private int whatCommonResponse;
-    private YDNET_STATUS netStatus;
+    private BQNET_STATUS netStatus;
 
     public BQSocketEventMsgBuilder context(Object context) {
         this.context = context;
@@ -57,7 +57,7 @@ public class BQSocketEventMsgBuilder {
         return this;
     }
 
-    public BQSocketEventMsgBuilder netStatus(YDNET_STATUS netStatus) {
+    public BQSocketEventMsgBuilder netStatus(BQNET_STATUS netStatus) {
         this.netStatus = netStatus;
         return this;
     }

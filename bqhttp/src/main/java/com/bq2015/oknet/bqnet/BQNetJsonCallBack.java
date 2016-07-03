@@ -7,9 +7,9 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
-import com.bq2015.bqhttp.event.YDNET_STATUS;
-import com.bq2015.bqhttp.event.YDNetEvent;
-import com.bq2015.bqhttp.event.YDNetEventBuilder;
+import com.bq2015.bqhttp.event.BQNET_STATUS;
+import com.bq2015.bqhttp.event.BQNetEvent;
+import com.bq2015.bqhttp.event.BQNetEventBuilder;
 import com.bq2015.oknet.bqcallback.JsonCallback;
 import com.bq2015.oknet.utils.Cons;
 
@@ -35,13 +35,13 @@ public abstract class BQNetJsonCallBack<T> extends JsonCallback<T> {
     public void onResponse(boolean isFromCache, T t, Request request, @Nullable Response response) {
 
         //网络请求成功
-        YDNetEvent event = new YDNetEventBuilder().what(request)
-                .arg1(YDNET_STATUS.OK.getValue())
-                .ydNetStatus(YDNET_STATUS.OK)
+        BQNetEvent event = new BQNetEventBuilder().who(request)
+                .code1(BQNET_STATUS.OK.getValue())
+                .bqNetStatus(BQNET_STATUS.OK)
                 .obj(t)
                 .context(context)
                 .repMsg("网络请求成功")
-                .createYDNetEvent();
+                .createBQNetEvent();
 
             this.netRequestSuccess(event);
     }
@@ -55,52 +55,52 @@ public abstract class BQNetJsonCallBack<T> extends JsonCallback<T> {
             int    errorCode = ydNetUnkownException.getErrorCode();
             String errorMsg  = ydNetUnkownException.getErrorMsg();
 
-            YDNET_STATUS YDNETSTATUS = null;
+            BQNET_STATUS YDNETSTATUS = null;
 
-            if (errorCode == YDNET_STATUS.YD_UNKOWN_ERROR.getValue()){
+            if (errorCode == BQNET_STATUS.YD_UNKOWN_ERROR.getValue()){
                 //未知错误
-                YDNETSTATUS = YDNET_STATUS.YD_UNKOWN_ERROR;
+                YDNETSTATUS = BQNET_STATUS.YD_UNKOWN_ERROR;
                 errorMsg = "未知错误：" + errorMsg;
-            } else if (errorCode == YDNET_STATUS.NO_CODE.getValue()) {
+            } else if (errorCode == BQNET_STATUS.NO_CODE.getValue()) {
                 //服务器返回信息中没有code字段
-                YDNETSTATUS = YDNET_STATUS.NO_CODE;
+                YDNETSTATUS = BQNET_STATUS.NO_CODE;
                 errorMsg = "错误：服务器返回信息中没有code字段" + errorMsg;
-            } else if (errorCode == YDNET_STATUS.NO_MORE_DATA.getValue()) {
+            } else if (errorCode == BQNET_STATUS.NO_MORE_DATA.getValue()) {
                 //没有更多数据
-                YDNETSTATUS = YDNET_STATUS.NO_MORE_DATA;
+                YDNETSTATUS = BQNET_STATUS.NO_MORE_DATA;
                 errorMsg = "错误：没有更多数据" + errorMsg;
-            } else if (errorCode == YDNET_STATUS.TOKEN_VERIFY_FAILED.getValue()) {
+            } else if (errorCode == BQNET_STATUS.TOKEN_VERIFY_FAILED.getValue()) {
                 //请重新登录
-                YDNETSTATUS = YDNET_STATUS.TOKEN_VERIFY_FAILED;
+                YDNETSTATUS = BQNET_STATUS.TOKEN_VERIFY_FAILED;
                 errorMsg = "错误：没有更多数据" + errorMsg;
-            } else if (errorCode == YDNET_STATUS.TOKEN_OVERDUE.getValue()) {
+            } else if (errorCode == BQNET_STATUS.TOKEN_OVERDUE.getValue()) {
                 //Token过期
-                YDNETSTATUS = YDNET_STATUS.TOKEN_OVERDUE;
+                YDNETSTATUS = BQNET_STATUS.TOKEN_OVERDUE;
                 errorMsg = "错误：Token过期" + errorMsg;
-            } else if (errorCode == YDNET_STATUS.ACCOUNT_LOGINED.getValue()) {
+            } else if (errorCode == BQNET_STATUS.ACCOUNT_LOGINED.getValue()) {
                 //用户已经登录
-                YDNETSTATUS = YDNET_STATUS.ACCOUNT_LOGINED;
+                YDNETSTATUS = BQNET_STATUS.ACCOUNT_LOGINED;
                 errorMsg = "错误：用户已经登录" + errorMsg;
-            } else if (errorCode == YDNET_STATUS.MISSING_PARAMETERS.getValue()) {
+            } else if (errorCode == BQNET_STATUS.MISSING_PARAMETERS.getValue()) {
                 //缺少参数
-                YDNETSTATUS = YDNET_STATUS.MISSING_PARAMETERS;
+                YDNETSTATUS = BQNET_STATUS.MISSING_PARAMETERS;
                 errorMsg = "错误：缺少参数" + errorMsg;
-            } else if (errorCode == YDNET_STATUS.SERVER_ERROR.getValue()) {
+            } else if (errorCode == BQNET_STATUS.SERVER_ERROR.getValue()) {
                 //服务器错误
                 errorMsg = "错误：服务器错误" + errorMsg;
-                YDNETSTATUS = YDNET_STATUS.SERVER_ERROR;
+                YDNETSTATUS = BQNET_STATUS.SERVER_ERROR;
             }
 
             //网络异常时的回调处理
             if (null != YDNETSTATUS) {
                 //网络请求异常
                 Log.v("YDNet", className + "errorCode：" + errorCode + "------" +  "errorMsg：" + errorMsg) ;
-                YDNetEvent event = new YDNetEventBuilder()
-                        .arg1(YDNETSTATUS.getValue())
+                BQNetEvent event = new BQNetEventBuilder()
+                        .code1(YDNETSTATUS.getValue())
                         .context(context)
-                        .ydNetStatus(YDNETSTATUS)
+                        .bqNetStatus(YDNETSTATUS)
                         .repMsg(errorMsg)
-                        .createYDNetEvent();
+                        .createBQNetEvent();
 
                 if (!this.netRequestFail(event)){
                     //自定义异常处理
@@ -110,9 +110,9 @@ public abstract class BQNetJsonCallBack<T> extends JsonCallback<T> {
         }
     }
 
-    public abstract void netRequestSuccess(YDNetEvent event);
+    public abstract void netRequestSuccess(BQNetEvent event);
 
-    public boolean netRequestFail(YDNetEvent event) {
+    public boolean netRequestFail(BQNetEvent event) {
         Log.v("YDNet", className + "网络请求失败：" + event.toString());
         return false;
     }

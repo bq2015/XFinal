@@ -2,11 +2,7 @@ package com.bq2015.oknet.bqcallback;
 
 import android.text.TextUtils;
 
-import com.alibaba.fastjson.JSON;
 import com.bq2015.oknet.bqnet.BQNetExceptionParser;
-import com.bq2015.oknet.bqnet.BQNetUnkownException;
-
-import org.json.JSONObject;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
@@ -43,11 +39,12 @@ public abstract class JsonCallback<T> extends EncryptCallback<T> {
         if (TextUtils.isEmpty(responseData)) {
             return null;
         }
+        return (T)responseData;
 
-        /**
+       /* *//**
          * 一般来说，服务器返回的响应码都包含 code，msg，data 三部分，在此根据自己的业务需要完成相应的逻辑判断
          * 以下只是一个示例，具体业务具体实现
-         */
+         *//*
         JSONObject jsonObject = new JSONObject(responseData);
         final String msg = jsonObject.optString("msg", "");
         final int   code = jsonObject.optInt("code", 0);
@@ -55,10 +52,10 @@ public abstract class JsonCallback<T> extends EncryptCallback<T> {
 
         switch (code) {
             case 0:
-                /**
+                *//**
                  * code = 0 代表成功，默认实现了Gson解析成相应的实体Bean返回，可以自己替换成fastjson等
                  * 对于返回参数，先支持 String，然后优先支持class类型的字节码，最后支持type类型的参数
-                 */
+                 *//*
                 if (clazz == String.class) {
                     return (T) data;
                 }
@@ -113,7 +110,7 @@ public abstract class JsonCallback<T> extends EncryptCallback<T> {
             default:
                 //默认抛出
                 throw new BQNetUnkownException(code,  msg);
-        }
+        }*/
 
         //如果要更新UI，需要使用handler，可以如下方式实现，也可以自己写handler
         /*OkHttpUtils.getInstance().getDelivery().post(new Runnable() {

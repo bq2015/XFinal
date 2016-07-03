@@ -6,11 +6,11 @@
 
 项目包结构整洁明了：    
 
-![](image01.png)   
+![](docimage\image01.png)   
 
 >##网络基于Okhttp3使用方式，采用retrofit形式使用。    
 
-![](image02.png) 
+![](docimage\image02.png) 
     
 >##简单三步，快速掌握用法     
 
@@ -35,7 +35,7 @@
         mText.setText(content);
     }
 
-第三步：在VM层，调用请求结果，返回Bean，调用V层更新控件的就读，通实方法参数传递Bean中封装好数据信息    
+第三步：在VM层，调用请求结果，返回Bean，调用V层更新控件的方法，通实方法参数传递Bean中封装好数据信息    
 
 
      /**

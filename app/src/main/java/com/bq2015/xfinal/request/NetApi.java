@@ -16,7 +16,7 @@ public interface NetApi {
     /**
      * 第一步：定义请求接口（提前写好封装服务器返回数据用的Bean）
      */
-    @CACHE(CacheMode.FIRST_CACHE_THEN_REQUEST) //等从缓存读取，再请求网络
+    @CACHE(CacheMode.FIRST_CACHE_THEN_REQUEST) //先从缓存读取，再请求网络
     @GET("http://api.avatardata.cn/Stock/CN")
     NetRequest<StockInfo> getStockInfos(@PARAMS("key") String key  //应用APPKEY
             , @PARAMS("stockid") String stockid                    //	沪深股票ID，最多查询10支股票代码，

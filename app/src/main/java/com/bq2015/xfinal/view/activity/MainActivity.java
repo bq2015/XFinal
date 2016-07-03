@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import com.bq2015.bqlib.mvvm.base.BaseActivity;
 import com.bq2015.xfinal.R;
-import com.bq2015.xfinal.vm.MainActivityVM;
+import com.bq2015.xfinal.viewmodel.MainActivityVM;
 
 public class MainActivity extends BaseActivity<MainActivity,MainActivityVM> {
 

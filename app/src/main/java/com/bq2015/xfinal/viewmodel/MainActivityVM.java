@@ -1,4 +1,4 @@
-package com.bq2015.xfinal.vm;
+package com.bq2015.xfinal.viewmodel;
 
 import android.support.annotation.NonNull;
 

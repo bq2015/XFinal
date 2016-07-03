@@ -13,6 +13,7 @@ import com.bq2015.xfinal.request.Net;
 import com.bq2015.xfinal.view.activity.MainActivity;
 
 /**
+ * ViewModel层  业务逻辑
  * Created by bq2015 on 2016/6/24.
  */
 public class MainActivityVM extends AbstractViewModel<MainActivity> {
@@ -46,11 +47,13 @@ public class MainActivityVM extends AbstractViewModel<MainActivity> {
             }
         });
 */
-
+        /**
+         * 第三步：在VM层，调用请求结果，返回Bean，调用V层更新控件的就读，通实方法参数传递Bean中封装好数据信息
+         */
         mStockInfoNetRequest = Net.get()
-                .getStockInfos("b67e5efb0c78439e964c83a1ee752f4c", "hs002230", 1, "JSON", true)
-                .showProgress(mView,"正在加载...")
-                .execute(new OnBQNetEventListener() {
+                .getStockInfos("b67e5efb0c78439e964c83a1ee752f4c", "hs002230", 1, "JSON", true)//网络接口
+                .showProgress(mView,"正在加载...")//加载中状态
+                .execute(new OnBQNetEventListener() { //执行并返回Bean
                     @Override
                     public void netRequestSuccess(BQNetEvent event) {
                         if (event.whoEqual(mStockInfoNetRequest)) {

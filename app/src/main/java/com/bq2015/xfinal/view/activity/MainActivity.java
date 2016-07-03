@@ -30,6 +30,11 @@ public class MainActivity extends BaseActivity<MainActivity,MainActivityVM> {
         //mText.setText(result.getRetcode());
     }
 
+    /**
+     * Textview显示内容
+     * （第二步：更新UI控件的方法）
+     * @param content
+     */
     public void setTextContent(String content) {
         mText.setText(content);
     }

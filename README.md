@@ -8,7 +8,7 @@
 
 ![](image01.png)   
 
->##网络基于Okhttp3使用方式，采用retrofit形式使用。    
+>##网络基于Okhttp3，采用retrofit形式使用。    
 
 ![](image02.png) 
     

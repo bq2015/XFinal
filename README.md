@@ -61,4 +61,4 @@
                     }
                 });
 
-待进一步完善...
+备注：mView需在ViewModel层BindView方法中取值，mView = getView();

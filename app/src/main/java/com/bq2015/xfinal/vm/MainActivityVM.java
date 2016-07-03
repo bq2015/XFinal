@@ -59,7 +59,7 @@ public class MainActivityVM extends AbstractViewModel<MainActivity> {
                         if (event.whoEqual(mStockInfoNetRequest)) {
                             mView.dissmissLoadingView();
                             StockInfo info = event.getNetResult();
-                            //恒生指数据标题
+                            //调用View层方法更新控件
                             mView.setTextContent(info.getResult().getMarket().getHSI().getName());
                         }
                     }

@@ -6,11 +6,11 @@
 
 项目包结构整洁明了：    
 
-![](docimage\image01.png)   
+![](image01.png)   
 
 >##网络基于Okhttp3使用方式，采用retrofit形式使用。    
 
-![](docimage\image02.png) 
+![](image02.png) 
     
 >##简单三步，快速掌握用法     
 

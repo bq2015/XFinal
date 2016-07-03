@@ -17,12 +17,13 @@
 
 第一步：定义请求接口（提前写好封装服务器返回数据用的Bean）
 
-     @GET("http://api.avatardata.cn/Stock/CN")
-    NetRequest<StockInfo> getStockInfos(@PARAMS("key") String key//应用APPKEY
-            , @PARAMS("stockid") String stockid //	沪深股票ID，最多查询10支股票代码，
-            , @PARAMS("list") int list //list=1,表示一次查询多支股票，list=其它值，则一次只查一支股票
-            , @PARAMS("dtype") String dtype//返回结果格式：可选JSON/XML，默认为JSON
-            , @PARAMS("format") boolean format);//当返回结果格式为JSON时，
+     @CACHE(CacheMode.FIRST_CACHE_THEN_REQUEST) //先从缓存读取，再请求网络
+    @GET("http://api.avatardata.cn/Stock/CN")
+    NetRequest<StockInfo> getStockInfos(@PARAMS("key") String key  //应用APPKEY
+            , @PARAMS("stockid") String stockid                    //	沪深股票ID，最多查询10支股票代码，
+            , @PARAMS("list") int list                             //list=1,表示一次查询多支股票，
+            , @PARAMS("dtype") String dtype                        //返回结果格式：可选JSON/XML，默认JSON
+            , @PARAMS("format") boolean format);                   //当返回结果格式为JSON时，
 
 第二步：在V层（View）,定义好更新UI控件的方法
 

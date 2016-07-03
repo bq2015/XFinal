@@ -28,19 +28,15 @@
 
      /**
      * Textview显示内容
-     * （第二步：更新UI控件的方法）
      * @param content
      */
     public void setTextContent(String content) {
         mText.setText(content);
     }
 
-第三步：在VM层，调用请求结果，返回Bean，调用V层更新控件的方法，通实方法参数传递Bean中封装好数据信息    
+第三步：在ViewModel层，调用网络请求接口，返回Bean，调用View层更新控件的方法，通过方法参数传递Bean中封装好数据信息    
 
-
-     /**
-         * 第三步：在VM层，调用请求结果，返回Bean，调用V层更新控件的就读，通实方法参数传递Bean中封装好数据信息
-         */
+       
         mStockInfoNetRequest = Net.get()
                 .getStockInfos("b67e5efb0c78439e964c83a1ee752f4c", "hs002230", 1, "JSON", true)//网络接口
                 .showProgress(mView,"正在加载...")//加载中状态
